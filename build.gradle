@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+/*
+Build file 'C:\Users\Karol\IdeaProjects\course\build.gradle' line: 2
+
+Could not compile build file 'C:\Users\Karol\IdeaProjects\course\build.gradle'.
+> startup failed:
+  build file 'C:\Users\Karol\IdeaProjects\course\build.gradle': 2: only id(String) method calls allowed in plugins {} script block
+
+ */
