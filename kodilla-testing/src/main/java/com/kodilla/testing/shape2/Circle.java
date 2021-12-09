@@ -1,6 +1,6 @@
 package com.kodilla.testing.shape2;
 
-public class Circle {
+public class Circle implements Shape {
     String name;
     double radius;
     double PI = 3.14;
@@ -13,8 +13,7 @@ public class Circle {
         return name;
     }
 
-    public double getField(double date1) {
-        radius = date1;
+    public double getField(double radius, double date2) {
         return radius * radius * PI;
     }
 }

@@ -1,6 +1,6 @@
 package com.kodilla.testing.shape2;
 
-public class Square {
+public class Square implements Shape {
     String name;
     double lengthSide;
 
@@ -12,8 +12,7 @@ public class Square {
         return name;
     }
 
-    public double getField(double date1) {
-        lengthSide = date1;
+    public double getField(double lengthSide, double date2) {
         return lengthSide * lengthSide;
     }
 }

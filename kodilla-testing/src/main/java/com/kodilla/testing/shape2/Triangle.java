@@ -13,9 +13,7 @@ public class Triangle implements Shape{
         return name;
     }
 
-    public double getField(double date1, double date2) {
-        height = date1;
-        lengthSide = date2;
+    public double getField(double height, double lengthSide) {
         return height * lengthSide / 2;
     }
 
