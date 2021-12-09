@@ -22,7 +22,7 @@ public class ShapeCollector {
         return listOfShapes.get(0);
     }
 
-    public int listSize() {
+    public int getListSize() {
         return listOfShapes.size();
     }
 

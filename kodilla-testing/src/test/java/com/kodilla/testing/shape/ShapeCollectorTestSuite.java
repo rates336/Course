@@ -39,7 +39,7 @@ public class ShapeCollectorTestSuite {
     Shape shape = new Triangle("triangle");
     shapes.add(shape);
     sc.addFigure(shape);
-    Assertions.assertEquals(shapes.size(), sc.listSize());
+    Assertions.assertEquals(shapes.size(), sc.getListSize());
 }
 @Test
     public void testRemoveFigure() {
@@ -61,7 +61,7 @@ public class ShapeCollectorTestSuite {
     Assertions.assertEquals(theList.get(0), sc.getFigure(0));
     sc.removeFigure(shape3);
     theList.remove(shape3);
-    Assertions.assertEquals(theList.size(), sc.listSize());
+    Assertions.assertEquals(theList.size(), sc.getListSize());
 }
 @Test
     public void testGetFigure() {
