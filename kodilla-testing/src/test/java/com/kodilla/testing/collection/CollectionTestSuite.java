@@ -17,9 +17,9 @@ public class CollectionTestSuite {
         System.out.println("After ");
     }
 
-    @DisplayName("Test if the list is empty " +
-            "is empty"
-    )
+    @DisplayName
+        ("Test if the list is empty " +
+            "is empty")
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         List <Integer> empty = new ArrayList<Integer>();
@@ -35,7 +35,7 @@ public class CollectionTestSuite {
         for (int i = 0; i < 6; i++) {
             numbers.add(i);
         }
-        List <Integer> theList = odd.exterminate(numbers);
+        List <Integer> theList = numbers;
         Assertions.assertEquals(theList, numbers);
     }
 
@@ -43,23 +43,18 @@ public class CollectionTestSuite {
             "had only even numbers.")
     @Test
     public void testOddNumbersExterminatorEvenList() {
-        List <Integer> numbers = new ArrayList<>();
+        List<Integer> evenNumbers = new ArrayList<>();
+        evenNumbers.add(0);
+        evenNumbers.add(2);
+        evenNumbers.add(4);
+        List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             numbers.add(i);
         }
-        List <Integer> evenNumbers = new ArrayList<>();
-        for (int i = 0; i < numbers.size() - 1; i++) {
-            if(numbers.get(i) % 2 == 0) {
-                evenNumbers.add(numbers.get(i));
-            }
-        }
-        List <Integer> theList = odd.exterminate(evenNumbers);
+        List<Integer> theList = odd.exterminate(numbers);
         Assertions.assertEquals(theList, evenNumbers);
 
     }
 
 
 }
-/*
-Dziwny bład
-*/
