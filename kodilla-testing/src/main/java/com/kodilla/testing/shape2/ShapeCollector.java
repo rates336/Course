@@ -18,10 +18,6 @@ public class ShapeCollector {
         return listOfShapes.get(n);
     }
 
-    public Shape showFigures() {
-        return listOfShapes.get(0);
-    }
-
     public int getListSize() {
         return listOfShapes.size();
     }

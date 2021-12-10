@@ -17,32 +17,34 @@ public class ShapeCollectorTestSuite {
 
 
 @Test
-    public void testAddFigure() {
-        Shape shape = new Triangle("triangle");
-        Shape shape2 = new Circle("circle");
-        Shape shape3 = new Square("square");
-        List<Shape> expList = new ArrayList<>();
-        sc.addFigure(shape);
-        sc.addFigure(shape2);
-        sc.addFigure(shape3);
-        expList.add(shape);
-        expList.add(shape2);
-        expList.add(shape3);
-        Assertions.assertEquals(expList.get(0), sc.getFigure(0));
-        Assertions.assertEquals(expList.get(1), sc.getFigure(1));
-        Assertions.assertEquals(expList.get(2), sc.getFigure(2));
+public void testAddFigure() {
+    Shape shape = new Triangle("triangle");
+    Shape shape2 = new Circle("circle");
+    Shape shape3 = new Square("square");
+    List<Shape> expList = new ArrayList<>();
+    sc.addFigure(shape);
+    sc.addFigure(shape2);
+    sc.addFigure(shape3);
+    expList.add(shape);
+    expList.add(shape2);
+    expList.add(shape3);
+    Assertions.assertEquals(expList.get(0), sc.getFigure(0));
+    Assertions.assertEquals(expList.get(1), sc.getFigure(1));
+    Assertions.assertEquals(expList.get(2), sc.getFigure(2));
 
 }
+
 @Test
-    public void testListSize() {
+public void testListSize() {
     List<Shape> shapes = new ArrayList<>();
     Shape shape = new Triangle("triangle");
     shapes.add(shape);
     sc.addFigure(shape);
     Assertions.assertEquals(shapes.size(), sc.getListSize());
 }
+
 @Test
-    public void testRemoveFigure() {
+public void testRemoveFigure() {
     Shape shape = new Triangle("triangle");
     Shape shape2 = new Circle("circle");
     Shape shape3 = new Square("square");
@@ -63,22 +65,15 @@ public class ShapeCollectorTestSuite {
     theList.remove(shape3);
     Assertions.assertEquals(theList.size(), sc.getListSize());
 }
+
 @Test
-    public void testGetFigure() {
+public void testGetFigure() {
         int n = 0;
         List<Shape> shapes = new ArrayList<>();
         Shape shape = new Circle("circle");
         shapes.add(shape);
         sc.addFigure(shape);
         Assertions.assertEquals(shapes.get(n), sc.getFigure(n));
-    }
-@Test
-    public void testShowFigures() {
-        List<Shape> shapeList = new ArrayList<>();
-        Shape shape = new Square("square");
-        shapeList.add(shape);
-        sc.addFigure(shape);
-        Assertions.assertEquals(shapeList.get(0), sc.showFigures());
     }
 
 
