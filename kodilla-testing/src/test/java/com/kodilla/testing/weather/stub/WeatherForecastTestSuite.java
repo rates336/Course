@@ -20,10 +20,11 @@ class WeatherForecastTestSuite {
         Temperatures temperatures = new TemperaturesStub();
         WeatherForecast weatherForecast = new WeatherForecast(temperatures);
 
-        double expected = (25.5 + 26.2 + 24.8 + 25.2 + 26.1) / 5;
-        double result = weatherForecast.averageTemperatures(temperatures);
+        double expected = 25.56;
+        double expectedTotal = 127.8;
+        double actual = weatherForecast.averageTemperatures(temperatures);
 
-        Assertions.assertEquals(expected, result);
+        Assertions.assertEquals(expectedTotal, actual);
     }
 
 }
