@@ -1,5 +1,6 @@
 package com.kodilla.testing.weather.stub;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,11 +32,12 @@ public class WeatherForecast {
         for (int i = 0; i < temperatures.getTemperatures().size(); i++) {
             sumOfTemperatures += temperatures.getTemperatures().get(tab[i]);
         }
-        return sumOfTemperatures;
+        return sumOfTemperatures / 5;
     }
 
     public double medianTemperatures(Temperatures temperatures) {
-        double sumOfTemperatures = 0;
+        double sumOfTemperatures;
+        double medianTemperatures = 0;
         String tab[] = new String[5];
         tab[0] = "Warszawa";
         tab[1] = "Krakow";
@@ -43,17 +45,18 @@ public class WeatherForecast {
         tab[3] = "Gdansk";
         tab[4] = "Rzeszow";
         double[] tempTab = new double[temperatures.getTemperatures().size()];
-        int temp = temperatures.getTemperatures().size();
-        double tempOP = 0;
         for (int i = 0; i < temperatures.getTemperatures().size(); i++) {
-            tempOP = temperatures.getTemperatures().get(tab[i]);
-            for (int j = 1; j < temp; j++) {
-                if(tempOP > temperatures.getTemperatures().get(tab[j])) {
-
-                }
+            tempTab[i] = temperatures.getTemperatures().get(tab[i]);
             }
+        Arrays.sort(tempTab);
+        if(tempTab.length % 2 == 0) {
+            sumOfTemperatures = tempTab[tempTab.length / 2] +
+                    tempTab[tempTab.length / 2 - 1];
+            medianTemperatures = sumOfTemperatures / 2;
+        } else {
+            medianTemperatures = tempTab[tab.length / 2];
         }
-        return sumOfTemperatures;
+        return medianTemperatures;
 
     }
 

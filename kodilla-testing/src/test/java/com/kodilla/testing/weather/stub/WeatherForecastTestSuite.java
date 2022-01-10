@@ -21,10 +21,20 @@ class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperatures);
 
         double expected = 25.56;
-        double expectedTotal = 127.8;
         double actual = weatherForecast.averageTemperatures(temperatures);
 
-        Assertions.assertEquals(expectedTotal, actual);
+        Assertions.assertEquals(expected, actual, 2,"Average");
+    }
+
+    @Test
+    void testMedianTemperatures() {
+        Temperatures temperatures = new TemperaturesStub();
+        WeatherForecast weatherForecast = new WeatherForecast(temperatures);
+
+        double expected = 25.5;
+        double actual = weatherForecast.medianTemperatures(temperatures);
+
+        Assertions.assertEquals(expected, actual,"Median");
     }
 
 }
