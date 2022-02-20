@@ -1,13 +1,18 @@
 package com.kodilla.forum.statistic;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ExtendWith(MockitoExtension.class)
 public class StatisticTestSuite {
     int noThis = 0;
     int number100 = 100;
@@ -15,7 +20,7 @@ public class StatisticTestSuite {
     int numberTest = 0;
 
 
-
+    @InjectMocks
     ForumStats forumStats;
     @Mock
     Statistics statisticsMock;
@@ -27,7 +32,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics111(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(noThis, noThis, noThis);
+        //forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When
@@ -43,7 +48,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics132(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(noThis, number1000, number100);
+        forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When
@@ -59,7 +64,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics123(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(noThis, number100, number1000);
+        forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When
@@ -75,7 +80,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics211(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(number100, noThis, noThis);
+        forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When
@@ -91,7 +96,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics232(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(number100, number1000, number100);
+        forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When
@@ -107,7 +112,7 @@ public class StatisticTestSuite {
     @Test
     void testCalculateAdvStatistics223(Statistics statistics) {
         //Given
-        forumStats = new ForumStats(noThis, noThis, noThis);
+        forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
 
         //When

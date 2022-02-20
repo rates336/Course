@@ -6,7 +6,7 @@ import com.kodilla.library.LibraryUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForumStats implements Statistics {
+public class ForumStats {
     int usersQuantity;
     int postsQuantity;
     int commentsQuantity;
@@ -14,10 +14,10 @@ public class ForumStats implements Statistics {
     double averageCommentsForUser;
     double averageCommentsForPost;
 
-    public ForumStats(int usersQuantity, int postsQuantity, int commentsQuantity) {
-        this.usersQuantity = usersQuantity;
-        this.postsQuantity = postsQuantity;
-        this.commentsQuantity = commentsQuantity;
+    public ForumStats(Statistics statistics) {
+        this.usersQuantity = statistics.userNames().size();
+        this.postsQuantity = statistics.postCount();
+        this.commentsQuantity = statistics.commentsCount();
     }
 
     public List<String> userNames() {
