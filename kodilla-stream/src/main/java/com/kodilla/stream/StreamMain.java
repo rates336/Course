@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.beautifier.PoemBeautifierRef;
 import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
@@ -20,6 +21,11 @@ public class StreamMain {
         pb.beautify("Sushi", text -> "It's OK " + text + " > <" );
         pb.beautify("Fries", text -> text.toLowerCase(Locale.ROOT) );
         pb.beautify("L o L", text -> text.length() + " " + text);
+
+        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle1);
+        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle2);
+        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle3);
+        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle4);
 
     }
 }
