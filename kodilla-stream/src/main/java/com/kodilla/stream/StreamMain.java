@@ -5,6 +5,7 @@ import com.kodilla.stream.beautifier.PoemBeautifierRef;
 import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
+import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 import java.util.Locale;
@@ -28,6 +29,13 @@ public class StreamMain {
         expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle3);
         expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle4);*/
 
-        NumbersGenerator.generateEven(10);
+//        NumbersGenerator.generateEven(10);
+            People.getList().stream()
+                    .map(String::toUpperCase)                             // [1]
+                    .filter(s -> s.length() > 11)                         // [2]
+                    .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".")   // [3]
+                    .filter(s -> s.substring(0, 1).equals("M"))           // [4]
+                    .forEach(System.out::println);                        // [5]
+
     }
 }
