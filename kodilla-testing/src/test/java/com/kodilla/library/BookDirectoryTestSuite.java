@@ -105,7 +105,7 @@ class BookDirectoryTestSuite {
         List<Book> listWithFiveBooks = bookLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
-        assertEquals(0, emptyList.size());
+        assertEquals(true, emptyList.isEmpty());
         assertEquals(1, listWithOneBook.size());
         assertEquals(5, listWithFiveBooks.size());
     }
