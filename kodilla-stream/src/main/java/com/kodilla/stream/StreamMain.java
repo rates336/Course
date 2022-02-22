@@ -3,6 +3,7 @@ package com.kodilla.stream;
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.beautifier.PoemBeautifierRef;
 import com.kodilla.stream.beautifier.PoemDecorator;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -14,7 +15,7 @@ public class StreamMain {
 
         //expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
         //expressionExecutor.executeExpression(10, 5, FunctionalCalculator::subBFromA);
-        PoemBeautifier pb = new PoemBeautifier();
+        /*PoemBeautifier pb = new PoemBeautifier();
         pb.beautify("Pizza", text -> "Good  " + text + " !!!" );
         pb.beautify("Burger", text -> "VGood " + text + " ..." );
         pb.beautify("Kebab", text -> "Not Bad " + text + " ???" );
@@ -25,7 +26,8 @@ public class StreamMain {
         expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle1);
         expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle2);
         expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle3);
-        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle4);
+        expressionExecutor.executeBeautify("Pizza", PoemBeautifierRef::bStyle4);*/
 
+        NumbersGenerator.generateEven(10);
     }
 }
