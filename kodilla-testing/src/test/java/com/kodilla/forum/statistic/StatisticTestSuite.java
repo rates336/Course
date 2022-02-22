@@ -30,7 +30,7 @@ public class StatisticTestSuite {
         System.out.println("Now is next test ");
     }
     @Test
-    void testCalculateAdvStatistics111(Statistics statistics) {
+    void testCalculateAdvStatistics111() {
         //Given
         //forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
@@ -46,7 +46,7 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics132(Statistics statistics) {
+    void testCalculateAdvStatistics132() {
         //Given
         forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
@@ -62,7 +62,7 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics123(Statistics statistics) {
+    void testCalculateAdvStatistics123() {
         //Given
         forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
@@ -78,7 +78,7 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics211(Statistics statistics) {
+    void testCalculateAdvStatistics211() {
         //Given
         forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
@@ -94,7 +94,7 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics232(Statistics statistics) {
+    void testCalculateAdvStatistics232() {
         //Given
         forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
@@ -110,7 +110,7 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics223(Statistics statistics) {
+    void testCalculateAdvStatistics223() {
         //Given
         forumStats = new ForumStats(statisticsMock);
         forumStats.calculateAdvStatistics(statisticsMock);
