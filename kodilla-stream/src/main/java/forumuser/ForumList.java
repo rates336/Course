@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 public class ForumList {
-    public List<ForumUser> userList;
+    List<ForumUser> userList;
     public void usersGenerator(int count) {
         Random r = new Random();
         for (int i = 0; i < count; i++) {
@@ -27,6 +27,25 @@ public class ForumList {
     }
 
     public List<ForumUser> getUserList() {
-        return userList;
+        List<ForumUser> theList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            ForumUser newUser = new ForumUser("Poland", 'm',
+                new Date(2000, 3, 1), 10);
+            theList.add(newUser);
+
+        }
+        {
+            ForumUser user1 = new ForumUser("Germany", 'f',
+                    new Date(2000, 3, 1), 10);
+            theList.add(user1);
+            ForumUser user2 = new ForumUser("France", 'f',
+                    new Date(2008, 3, 1), 10);
+            theList.add(user1);
+            ForumUser user3 = new ForumUser("Russia", 'f',
+                    new Date(2000, 3, 1), 0);
+            theList.add(user1);
+        }
+
+        return theList;
     }
 }

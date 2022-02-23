@@ -46,15 +46,16 @@ public class StreamMain {
 
         System.out.println(theResultStringOfBooks);*/
         ForumList forumList = new ForumList();
-        forumList.usersGenerator(100);
-        Map<String, ForumUser> selectedUsers = forumList.getUserList().stream()
+        Map<Integer, ForumUser> selectedUsers = forumList.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'm')
                 .filter(forumUser -> 2022 - forumUser.getBirthDate().getYear() >= 20)
                 .filter(forumUser -> forumUser.getPostsSharedCounter() >= 1)
-                .map(ForumUser::getUserID)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
-        System.out.println(selectedUsers);
+        System.out.println(selectedUsers.size());
+        selectedUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + " : " + entry.getValue())
+                .forEach(System.out::println);
 
 
 
