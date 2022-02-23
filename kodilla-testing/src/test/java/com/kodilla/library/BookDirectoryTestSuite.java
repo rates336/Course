@@ -86,26 +86,26 @@ class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());                                     // [5]
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
-
     @Test
     void testListBooksInHandsOf() {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser libraryUser = new LibraryUser("John", "Smith", "11203169992");
-        List<Book> resultWithoutBooks = new ArrayList<>();
+        List<Book> resultWithoutBooks = new ArrayList<Book>();
         List<Book> resultWithOneBook = generateListOfNBooks(1);
         List<Book> resultWithFiveBooks = generateListOfNBooks(5);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithoutBooks);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithOneBook);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithFiveBooks);
 
+
         //When
-        List<Book> emptyList = bookLibrary.listBooksInHandsOf(libraryUser);
-        List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUser);
-        List<Book> listWithFiveBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> listWithoutBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithFiveBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
 
         //Then
-        assertEquals(true, emptyList.isEmpty());
+        assertEquals(true, listWithoutBooks.isEmpty());
         assertEquals(1, listWithOneBook.size());
         assertEquals(5, listWithFiveBooks.size());
     }
