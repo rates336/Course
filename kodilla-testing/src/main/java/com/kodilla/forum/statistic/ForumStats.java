@@ -32,7 +32,7 @@ public class ForumStats {
         return 0;
     }
 
-    public void calculateAdvStatistics(Statistics statistics) {
+    public void calculateAdvStatistics() {
         averagePostsForUser =(double) postsQuantity / usersQuantity;
         averageCommentsForUser =(double) commentsQuantity / usersQuantity;
         averageCommentsForPost = (double) commentsQuantity / postsQuantity;

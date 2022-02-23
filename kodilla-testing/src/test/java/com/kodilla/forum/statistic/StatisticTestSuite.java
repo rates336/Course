@@ -1,3 +1,4 @@
+/*
 package com.kodilla.forum.statistic;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -9,31 +10,45 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class StatisticTestSuite {
-    int noThis = 0;
-    int number100 = 100;
-    int number1000 = 1000;
-    int numberTest = 0;
+    int noThis() {
+        return 0;
+    }
+    int number100() {
+        return 100;
+    }
+    int number1000() {
+        return 1000;
+    }
+
+    public List<String> generatorOfUsersList(int quantity) {
+        List<String> theList = new ArrayList<>();
+        for (int i = 0; i < quantity; i++) {
+            theList.add("Book Reader nr " + i);
+        }
+        return theList;
+    }
 
 
-    @InjectMocks
-    ForumStats forumStats;
     @Mock
     Statistics statisticsMock;
 
     @BeforeEach
     void nextTest() {
-        System.out.println("Now is next test ");
+
     }
     @Test
     void testCalculateAdvStatistics111() {
         //Given
-        //forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
+        ForumStats forumStats = new ForumStats(statisticsMock);
+
+
 
         //When
         double resultAvePostsForUser = forumStats.averagePostsForUser;
@@ -127,3 +142,4 @@ public class StatisticTestSuite {
     }
 
 }
+*/
