@@ -90,8 +90,7 @@ class BookDirectoryTestSuite {
     void testListBooksInHandsOf() {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        LibraryUser libraryUser = new LibraryUser("John", "Smith", "11203169992");
-        List<Book> resultWithoutBooks = new ArrayList<Book>();
+        List<Book> resultWithoutBooks = new ArrayList<>();
         List<Book> resultWithOneBook = generateListOfNBooks(1);
         List<Book> resultWithFiveBooks = generateListOfNBooks(5);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithoutBooks);
