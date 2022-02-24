@@ -1,12 +1,10 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.book.Book;
-import com.kodilla.stream.book.BookDirectory;
-import com.kodilla.stream.lambda.*;
-import forumuser.ForumList;
-import forumuser.ForumUser;
+import com.kodilla.stream.forumuser.ForumList;
+import com.kodilla.stream.forumuser.ForumUser;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -45,10 +43,11 @@ public class StreamMain {
                         "\n<<\t\t\t\t\t\t\t\t\t>>"));
 
         System.out.println(theResultStringOfBooks);*/
+        Date date = new Date();
         ForumList forumList = new ForumList();
         Map<Integer, ForumUser> selectedUsers = forumList.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'm')
-                .filter(forumUser -> 2022 - forumUser.getBirthDate().getYear() >= 20)
+                .filter(forumUser -> date.getYear() - forumUser.getBirthDate().getYear() >= 20)
                 .filter(forumUser -> forumUser.getPostsSharedCounter() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
