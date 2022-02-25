@@ -19,4 +19,15 @@ public class PoemBeautifierRef {
         return text.charAt(0) + " " + text;
     }
 
+    public static String bigNumberStyle(String text) {
+        int modulo = text.length() % 3;
+        String temp = "" + text.substring(0, modulo);
+        String lastSection = text.substring(text.length() - 3);
+        for (int i = 0; i < (text.length() / 3) - 1; i++) {
+            temp = temp + text.substring(modulo, modulo + 3) + "_";
+            modulo += 3;
+        }
+        temp += lastSection;
+        return temp;
+    }
 }

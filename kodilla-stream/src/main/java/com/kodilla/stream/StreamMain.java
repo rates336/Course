@@ -1,7 +1,10 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifierRef;
 import com.kodilla.stream.forumuser.ForumList;
 import com.kodilla.stream.forumuser.ForumUser;
+import com.kodilla.stream.world.MyWorld;
+import com.kodilla.stream.world.interfaces.World;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -43,7 +46,7 @@ public class StreamMain {
                         "\n<<\t\t\t\t\t\t\t\t\t>>"));
 
         System.out.println(theResultStringOfBooks);*/
-        Date date = new Date();
+        /*        Date date = new Date();
         ForumList forumList = new ForumList();
         Map<Integer, ForumUser> selectedUsers = forumList.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'm')
@@ -54,7 +57,12 @@ public class StreamMain {
         System.out.println(selectedUsers.size());
         selectedUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + " : " + entry.getValue())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
+        World world = new MyWorld();
+        System.out.println(world.getPeopleQuantity());
+        String bigNumber = PoemBeautifierRef.bigNumberStyle("" + world.getPeopleQuantity());
+        System.out.println("Beautifier:");
+        System.out.println(bigNumber);
 
 
 
