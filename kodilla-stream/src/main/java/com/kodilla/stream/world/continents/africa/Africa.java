@@ -8,22 +8,29 @@ import com.kodilla.stream.world.interfaces.Country;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Africa implements Continent {
 
-    public BigDecimal peopleQuantity = listOfCountries().stream()
+    List<Country> listOfCountries = new ArrayList<>();
+    public BigDecimal peopleQuantity = getListOfCountries().stream()
             .map(Country::getPeopleQuantity)
             .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+
 
     public BigDecimal getPeopleQuantity() {
         return peopleQuantity;
     }
-    public List<Country> listOfCountries() {
-        List<Country> theList = new ArrayList<>();
-        theList.add(new SudanSouth());
-        theList.add(new Egypt());
-        theList.add(new RPA());
-        return theList;
+
+    public Africa() {
+        listOfCountries.add(new SudanSouth());
+        listOfCountries.add(new Egypt());
+        listOfCountries.add(new RPA());
+
+    }
+
+    public List<Country> getListOfCountries() {
+        return listOfCountries;
     }
 }

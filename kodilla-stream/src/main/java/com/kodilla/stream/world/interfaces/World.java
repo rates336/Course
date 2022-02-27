@@ -6,6 +6,5 @@ import java.util.List;
 public interface World {
 
     BigDecimal getPeopleQuantity();
-    List<Continent> listOfContinents();
 
 }

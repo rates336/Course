@@ -20,8 +20,17 @@ public class PoemBeautifierRef {
     }
 
     public static String bigNumberStyle(String text) {
+        if(text.length() <= 3) {
+            return text;
+        }
+
         int modulo = text.length() % 3;
-        String temp = "" + text.substring(0, modulo);
+        String temp;
+        if(modulo != 0)
+            temp = "" + text.substring(0, modulo) + "_";
+        else
+            temp = text.substring(0, 3) + "_";
+
         String lastSection = text.substring(text.length() - 3);
         for (int i = 0; i < (text.length() / 3) - 1; i++) {
             temp = temp + text.substring(modulo, modulo + 3) + "_";

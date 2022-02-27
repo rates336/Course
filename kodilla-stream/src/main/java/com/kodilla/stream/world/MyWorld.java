@@ -7,11 +7,13 @@ import com.kodilla.stream.world.interfaces.World;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MyWorld implements World {
 
-    public BigDecimal peopleQuantity = listOfContinents().stream()
+    List<Continent> listOfContinents = new LinkedList<>();
+    public BigDecimal peopleQuantity = listOfContinents.stream()
             .map(Continent::getPeopleQuantity)
             .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 
@@ -19,11 +21,12 @@ public class MyWorld implements World {
         return peopleQuantity;
     }
 
-    public List<Continent> listOfContinents() {
-        List<Continent> theList = new ArrayList<>();
-        theList.add(new Europe());
-        theList.add(new Africa());
-        return theList;
+    public MyWorld() {
+        listOfContinents.add(new Europe());
+        listOfContinents.add(new Africa());
     }
 
+    public List<Continent> getListOfContinents() {
+        return listOfContinents;
+    }
 }

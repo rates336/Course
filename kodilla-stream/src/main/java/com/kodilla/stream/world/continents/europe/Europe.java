@@ -8,10 +8,12 @@ import com.kodilla.stream.world.continents.europe.countries.Ukraine;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Europe implements Continent {
-    public BigDecimal peopleQuantity = listOfCountries().stream()
+    private List<Country> listOfCountries = new LinkedList();
+    public BigDecimal peopleQuantity = listOfCountries.stream()
             .map(Country::getPeopleQuantity)
             .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 
@@ -19,11 +21,13 @@ public class Europe implements Continent {
         return peopleQuantity;
     }
 
-    public List<Country> listOfCountries() {
-        List<Country> theList = new ArrayList<>();
-        theList.add(new Germany());
-        theList.add(new Poland());
-        theList.add(new Ukraine());
-        return theList;
+    public Europe() {
+        listOfCountries.add(new Germany());
+        listOfCountries.add(new Poland());
+        listOfCountries.add(new Ukraine());
+    }
+
+    public List<Country> getListOfCountries() {
+        return listOfCountries;
     }
 }

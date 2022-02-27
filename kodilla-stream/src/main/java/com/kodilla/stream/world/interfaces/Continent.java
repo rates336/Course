@@ -5,5 +5,4 @@ import java.util.List;
 
 public interface Continent {
     BigDecimal getPeopleQuantity();
-    List<Country> listOfCountries();
 }
