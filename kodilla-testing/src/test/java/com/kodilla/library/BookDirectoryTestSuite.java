@@ -85,12 +85,12 @@ class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());                                     // [5]
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
-    /*@Test
+    @Test
     void testListBooksInHandsOf0() {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultWithoutBooks = new ArrayList<>();
-        when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithoutBooks);
+
 
         //When
         List<Book> listWithoutBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
@@ -103,14 +103,19 @@ class BookDirectoryTestSuite {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultWithOneBook = generateListOfNBooks(1);
-        when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithOneBook);
+        List<Book> resultWithTwoBook = generateListOfNBooks(2);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock))
+                .thenReturn(resultWithOneBook).thenReturn(resultWithTwoBook);
+
 
 
         //When
         List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithTwoBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
 
         //Then
         assertEquals(1, listWithOneBook.size());
+        assertEquals(2, listWithTwoBook.size());
     }
     @Test
     void testListBooksInHandsOf5() {
@@ -124,5 +129,5 @@ class BookDirectoryTestSuite {
 
         //Then
         assertEquals(5, listWithFiveBooks.size());
-    }*/
+    }
 }
