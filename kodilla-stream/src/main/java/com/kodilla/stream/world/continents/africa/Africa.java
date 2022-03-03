@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Africa implements Continent {
 
-    List<Country> listOfCountries = new ArrayList<>();
+    public static List<Country> listOfCountries = new ArrayList<>();
     public BigDecimal peopleQuantity = getListOfCountries().stream()
             .map(Country::getPeopleQuantity)
             .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));

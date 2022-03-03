@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Europe implements Continent {
-    private List<Country> listOfCountries = new LinkedList();
+    public static List<Country> listOfCountries = new LinkedList();
     public BigDecimal peopleQuantity = listOfCountries.stream()
             .map(Country::getPeopleQuantity)
             .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
