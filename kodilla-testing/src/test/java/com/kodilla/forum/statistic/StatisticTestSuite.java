@@ -1,4 +1,4 @@
-/*
+
 package com.kodilla.forum.statistic;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,20 +12,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Double.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class StatisticTestSuite {
-    int noThis() {
-        return 0;
-    }
-    int number100() {
-        return 100;
-    }
-    int number1000() {
-        return 1000;
-    }
 
     public List<String> generatorOfUsersList(int quantity) {
         List<String> theList = new ArrayList<>();
@@ -44,27 +37,51 @@ public class StatisticTestSuite {
 
     }
     @Test
-    void testCalculateAdvStatistics111() {
+    void testCalculateAdvStatistics000() {
         //Given
         ForumStats forumStats = new ForumStats(statisticsMock);
-
-
+        forumStats.userNames = new ArrayList<>();
+        forumStats.postCount = 0;
+        forumStats.commentsCount = 0;
+        forumStats.calculateAdvStatistics();
 
         //When
         double resultAvePostsForUser = forumStats.averagePostsForUser;
         double resultAveCommentsForUser = forumStats.averageCommentsForUser;
         double resultAveCommentsForPost = forumStats.averageCommentsForPost;
         //Then
-        assertEquals(0, resultAvePostsForUser);
-        assertEquals(0, resultAveCommentsForUser);
+        assertEquals(NaN, resultAvePostsForUser);
+        assertEquals(NaN, resultAveCommentsForUser);
+        assertEquals(NaN, resultAveCommentsForPost);
+
+    }
+    @Test
+    void testCalculateAdvStatistics010() {
+        //Given
+        ForumStats forumStats = new ForumStats(statisticsMock);
+        forumStats.userNames = new ArrayList<>();
+        forumStats.postCount = 1000;
+        forumStats.commentsCount = 0;
+        forumStats.calculateAdvStatistics();
+
+        //When
+        double resultAvePostsForUser = forumStats.averagePostsForUser;
+        double resultAveCommentsForUser = forumStats.averageCommentsForUser;
+        double resultAveCommentsForPost = forumStats.averageCommentsForPost;
+        //Then
+        assertEquals(POSITIVE_INFINITY, resultAvePostsForUser);
+        assertEquals(NaN, resultAveCommentsForUser);
         assertEquals(0, resultAveCommentsForPost);
 
     }
     @Test
-    void testCalculateAdvStatistics132() {
+    void testCalculateAdvStatistics100() {
         //Given
-        forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
+        ForumStats forumStats = new ForumStats(statisticsMock);
+        forumStats.userNames = generatorOfUsersList(100);
+        forumStats.postCount = 0;
+        forumStats.commentsCount = 0;
+        forumStats.calculateAdvStatistics();
 
         //When
         double resultAvePostsForUser = forumStats.averagePostsForUser;
@@ -73,46 +90,17 @@ public class StatisticTestSuite {
         //Then
         assertEquals(0, resultAvePostsForUser);
         assertEquals(0, resultAveCommentsForUser);
-        assertEquals(0.1, resultAveCommentsForPost);
+        assertEquals(NaN, resultAveCommentsForPost);
 
     }
     @Test
-    void testCalculateAdvStatistics123() {
+    void testCalculateAdvStatistics110() {
         //Given
-        forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
-
-        //When
-        double resultAvePostsForUser = forumStats.averagePostsForUser;
-        double resultAveCommentsForUser = forumStats.averageCommentsForUser;
-        double resultAveCommentsForPost = forumStats.averageCommentsForPost;
-        //Then
-        assertEquals(0, resultAvePostsForUser);
-        assertEquals(0, resultAveCommentsForUser);
-        assertEquals(10, resultAveCommentsForPost);
-
-    }
-    @Test
-    void testCalculateAdvStatistics211() {
-        //Given
-        forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
-
-        //When
-        double resultAvePostsForUser = forumStats.averagePostsForUser;
-        double resultAveCommentsForUser = forumStats.averageCommentsForUser;
-        double resultAveCommentsForPost = forumStats.averageCommentsForPost;
-        //Then
-        assertEquals(0, resultAvePostsForUser);
-        assertEquals(0, resultAveCommentsForUser);
-        assertEquals(0, resultAveCommentsForPost);
-
-    }
-    @Test
-    void testCalculateAdvStatistics232() {
-        //Given
-        forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
+        ForumStats forumStats = new ForumStats(statisticsMock);
+        forumStats.userNames = generatorOfUsersList(100);
+        forumStats.postCount = 1000;
+        forumStats.commentsCount = 0;
+        forumStats.calculateAdvStatistics();
 
         //When
         double resultAvePostsForUser = forumStats.averagePostsForUser;
@@ -120,26 +108,13 @@ public class StatisticTestSuite {
         double resultAveCommentsForPost = forumStats.averageCommentsForPost;
         //Then
         assertEquals(10, resultAvePostsForUser);
-        assertEquals(1, resultAveCommentsForUser);
-        assertEquals(10, resultAveCommentsForPost);
+        assertEquals(0, resultAveCommentsForUser);
+        assertEquals(0, resultAveCommentsForPost);
 
     }
-    @Test
-    void testCalculateAdvStatistics223() {
-        //Given
-        forumStats = new ForumStats(statisticsMock);
-        forumStats.calculateAdvStatistics(statisticsMock);
 
-        //When
-        double resultAvePostsForUser = forumStats.averagePostsForUser;
-        double resultAveCommentsForUser = forumStats.averageCommentsForUser;
-        double resultAveCommentsForPost = forumStats.averageCommentsForPost;
-        //Then
-        assertEquals(1, resultAvePostsForUser);
-        assertEquals(10, resultAveCommentsForUser);
-        assertEquals(0.1, resultAveCommentsForPost);
 
-    }
+
 
 }
-*/
+

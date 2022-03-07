@@ -7,41 +7,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ForumStats {
-    int usersQuantity;
-    int postsQuantity;
-    int commentsQuantity;
     double averagePostsForUser;
     double averageCommentsForUser;
     double averageCommentsForPost;
 
     public ForumStats(Statistics statistics) {
-        this.usersQuantity = statistics.userNames().size();
-        this.postsQuantity = statistics.postCount();
-        this.commentsQuantity = statistics.commentsCount();
+        this.userNames = statistics.userNames();
+        this.postCount = statistics.postCount();
+        this.commentsCount = statistics.commentsCount();
     }
 
-    public List<String> userNames() {
-        return null;
-    }
-
-    public int postCount() {
-        return 0;
-    }
-
-    public int commentsCount() {
-        return 0;
-    }
+    public List<String> userNames;
+    public int postCount;
+    public int commentsCount;
 
     public void calculateAdvStatistics() {
-        averagePostsForUser =(double) postsQuantity / usersQuantity;
-        averageCommentsForUser =(double) commentsQuantity / usersQuantity;
-        averageCommentsForPost = (double) commentsQuantity / postsQuantity;
+        averagePostsForUser =(double) postCount / userNames.size();
+        averageCommentsForUser =(double) commentsCount / userNames.size();
+        averageCommentsForPost = (double) commentsCount / postCount;
     }
 
     public void showStatistics() {
-        System.out.println("usersQuantity: " + usersQuantity);
-        System.out.println("postsQuantity: " + postsQuantity);
-        System.out.println("commentsQuantity: " + commentsQuantity);
+        System.out.println("usersQuantity: " + userNames.size());
+        System.out.println("postsQuantity: " + postCount);
+        System.out.println("commentsQuantity: " + commentsCount);
         System.out.println("averagePostForUser: " + averagePostsForUser);
         System.out.println("averageCommentsForUser: " + averageCommentsForUser);
         System.out.println("averageCommentsForPost: " + averageCommentsForPost);

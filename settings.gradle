@@ -3,4 +3,6 @@ include 'kodilla-testing'
 include 'kodilla-stream'
 include 'untitled'
 include 'untitled'
+include 'myPortfolio'
+include 'kodilla-exception'
 
