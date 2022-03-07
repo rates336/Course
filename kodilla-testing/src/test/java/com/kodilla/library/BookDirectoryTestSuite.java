@@ -12,7 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
+<<<<<<< HEAD
+=======
 
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
 @ExtendWith(MockitoExtension.class)
 class BookDirectoryTestSuite {
     @Mock
@@ -91,7 +94,11 @@ class BookDirectoryTestSuite {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultWithoutBooks = new ArrayList<>();
+<<<<<<< HEAD
+
+=======
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithoutBooks);
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
 
         //When
         List<Book> listWithoutBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
@@ -104,14 +111,29 @@ class BookDirectoryTestSuite {
         //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultWithOneBook = generateListOfNBooks(1);
+<<<<<<< HEAD
+        List<Book> resultWithTwoBook = generateListOfNBooks(2);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock))
+                .thenReturn(resultWithOneBook).thenReturn(resultWithTwoBook);
+
+=======
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithOneBook);
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
 
 
         //When
         List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
+<<<<<<< HEAD
+        List<Book> listWithTwoBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
 
         //Then
         assertEquals(1, listWithOneBook.size());
+        assertEquals(2, listWithTwoBook.size());
+=======
+
+        //Then
+        assertEquals(1, listWithOneBook.size());
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
     }
     @Test
     void testListBooksInHandsOf5() {

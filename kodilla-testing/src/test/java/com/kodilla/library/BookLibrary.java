@@ -6,7 +6,10 @@ import java.util.List;
 
 public class BookLibrary {
     private LibraryDatabase libraryDatabase;
+<<<<<<< HEAD
+=======
     List<Book> theList = new ArrayList<>();
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
 
     public BookLibrary(LibraryDatabase libraryDatabase) {
         this.libraryDatabase = libraryDatabase;
@@ -24,6 +27,10 @@ public class BookLibrary {
         return bookList;
     }
 
+<<<<<<< HEAD
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
+=======
     boolean rentABook(LibraryUser libraryUser, Book book) {
         if(listBooksInHandsOf(libraryUser).size() <= 15 ) {
             theList.add(book);
@@ -49,6 +56,7 @@ public class BookLibrary {
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return theList;
+>>>>>>> a855bd3207a025fa9c51b0792f51fb44e64e40ed
     }
 
 }
