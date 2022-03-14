@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 John
 Samanta
 Mike
+=======
+John
+Samanta
+Mike
+>>>>>>> 77c2a98f1f56e569d4fd4f26e649e8d0068ac57c
 Jessica
