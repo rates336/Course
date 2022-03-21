@@ -1,28 +1,24 @@
+package com.kodilla.exception.io;
 
-public class FirstChallenge {
-    public double divide(double a, double b) throws ArithmeticException {
-        if (b == 0) {
-            throw new ArithmeticException();
-        }
-        return a / b;
-    }
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
-    /**
-     * This main can throw an ArithmeticException!!!
-     * @param args
-     */
-    public static void main(String[] args) {
-        FirstChallenge firstChallenge = new FirstChallenge();
-        double result = -1;
-        try {
-             result = firstChallenge.divide(3, 0);
-        } catch (ArithmeticException e) {
-            System.out.println();
+public class FileReader {
+
+    public void readFile() {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("names.txt").getFile());
+        try (Stream<String> fileLines = Files.lines(Paths.get(file.getPath()))) {
+            fileLines.forEach(System.out::println);
+        } catch (IOException e) {
+            System.out.println("Error when try read file \n" + e);
         } finally {
-            System.out.println(result);
+            System.out.println("I am here always bro ;)");
         }
-
-
+        System.out.println(file.getPath());
     }
 }
 
