@@ -1,4 +1,4 @@
-package com.kodilla.stream.array;
+package com.kodilla.stream.portfolio.array;
 
 import java.util.stream.IntStream;
 
