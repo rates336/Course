@@ -1,5 +1,6 @@
 package com.kodilla.stream.array;
 
+import com.kodilla.stream.portfolio.array.MyArray;
 import org.junit.jupiter.api.Test;
 
 

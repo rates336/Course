@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.kodilla'
+group 'com.company'
 version '0.0.1-SNAPSHOT'
 
 repositories {
@@ -20,5 +20,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-
 }
