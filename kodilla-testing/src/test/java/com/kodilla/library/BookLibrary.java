@@ -24,30 +24,6 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        return libraryDatabase.listBooksInHandsOf(libraryUser);
-    boolean rentABook(LibraryUser libraryUser, Book book) {
-        if(listBooksInHandsOf(libraryUser).size() <= 15 ) {
-            theList.add(book);
-            System.out.println("Rented successful.");
-            return true;
-        } else {
-            System.out.println("Rented failed: ");
-            System.out.println("User rented 15 books, please return previous rented books.");
-            return false;
-        }
-    }
-    boolean returnBooks(LibraryUser libraryUser, Book book) {
-        if(listBooksInHandsOf(libraryUser).contains(book)) {
-            theList.remove(book);
-            System.out.println("Returned successful.");
-            return true;
-        } else {
-            System.out.println("Returned failed: ");
-            System.out.println("The user not rented the book.");
-            return false;
-        }
-    }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return theList;
