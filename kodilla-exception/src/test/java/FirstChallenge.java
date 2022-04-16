@@ -1,5 +1,3 @@
-package com.kodilla.exception.io;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,4 +19,3 @@ class FileReader {
         System.out.println(file.getPath());
     }
 }
-

@@ -94,7 +94,7 @@ class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithoutBooks);
 
         //When
-        List<Book> listWithoutBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithoutBooks = bookLibrary.listBooksInHandsOf(libraryUserMock, libraryDatabaseMock);
 
         //Then
         assertEquals(true, listWithoutBooks.isEmpty());
@@ -108,12 +108,13 @@ class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock))
                 .thenReturn(resultWithOneBook).thenReturn(resultWithTwoBook);
 
-        when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithOneBook);
+        //when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithOneBook);
+        //when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithTwoBook);
 
 
         //When
-        List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
-        List<Book> listWithTwoBook = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithOneBook = bookLibrary.listBooksInHandsOf(libraryUserMock, libraryDatabaseMock);
+        List<Book> listWithTwoBook = bookLibrary.listBooksInHandsOf(libraryUserMock, libraryDatabaseMock);
 
         //Then
         assertEquals(1, listWithOneBook.size());
@@ -131,7 +132,7 @@ class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUserMock)).thenReturn(resultWithFiveBooks);
 
         //When
-        List<Book> listWithFiveBooks = bookLibrary.listBooksInHandsOf(libraryUserMock);
+        List<Book> listWithFiveBooks = bookLibrary.listBooksInHandsOf(libraryUserMock, libraryDatabaseMock);
 
         //Then
         assertEquals(5, listWithFiveBooks.size());

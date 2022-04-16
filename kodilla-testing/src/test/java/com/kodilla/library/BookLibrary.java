@@ -6,9 +6,9 @@ import java.util.List;
 
 public class BookLibrary {
     private LibraryDatabase libraryDatabase;
-    List<Book> theList = new ArrayList<>();
 
     public BookLibrary(LibraryDatabase libraryDatabase) {
+
         this.libraryDatabase = libraryDatabase;
     }
 
@@ -25,7 +25,9 @@ public class BookLibrary {
     }
 
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser, LibraryDatabase libraryDatabase) {
+        List<Book> theList = libraryDatabase.listBooksInHandsOf(libraryUser);
+
         return theList;
     }
 

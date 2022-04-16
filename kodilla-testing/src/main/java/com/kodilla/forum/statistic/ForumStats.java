@@ -1,3 +1,4 @@
+/*
 
 package com.kodilla.forum.statistic;
 
@@ -9,52 +10,52 @@ import java.util.List;
 
 public class ForumStats {
 
-    int usersQuantity;
-    int postsQuantity;
-    int commentsQuantity;
-
     double averagePostsForUser;
     double averageCommentsForUser;
     double averageCommentsForPost;
 
-    public ForumStats(Statistics statistics) {
-        this.userNames = statistics.userNames();
-        this.postCount = statistics.postCount();
-        this.commentsCount = statistics.commentsCount();
+    public double getAveragePostsForUser() {
+        return averagePostsForUser;
     }
 
-    public List<String> userNames;
-    public int postCount;
-    public int commentsCount;
+    public double getAverageCommentsForUser() {
+        return averageCommentsForUser;
+    }
 
-    public void calculateAdvStatistics() {
-        averagePostsForUser =(double) postCount / userNames.size();
-        averageCommentsForUser =(double) commentsCount / userNames.size();
-        averageCommentsForPost = (double) commentsCount / postCount;
+    public double getAverageCommentsForPost() {
+        return averageCommentsForPost;
+    }
+
+    public ForumStats(Statistics statistics) {
+        this.userNames(statistics);
+        this.postCount(statistics);
+        this.commentsCount(statistics);
+    }
+
+    public List<String> userNames(Statistics statistics) {
+        return statistics.userNames();
+    }
+    public int postCount(Statistics statistics) {
+        return statistics.postCount();
+    }
+    public int commentsCount(Statistics statistics) {
+        return statistics.commentsCount();
+    }
+
+    public void calculateAdvStatistics(Statistics statistics) {
+        averagePostsForUser =(double) postCount(statistics) / userNames(statistics).size();
+        averageCommentsForUser =(double) commentsCount(statistics) / userNames(statistics).size();
+        averageCommentsForPost = (double) commentsCount(statistics) / postCount(statistics);
     }
 
     public void showStatistics(Statistics statistics) {
-        System.out.println("usersQuantity: " + userNames.size());
-        System.out.println("postsQuantity: " + postCount);
-        System.out.println("commentsQuantity: " + commentsCount);
-        this.usersQuantity = statistics.userNames().size();
-        this.postsQuantity = statistics.postCount();
-        this.commentsQuantity = statistics.commentsCount();
-    }
-
-    public List<String> userNames() {
-        return null;
-    }
-
-    public int postCount() {
-        return 0;
-    }
-
-    public int commentsCount() {
-        return 0;
+        System.out.println("usersQuantity: " + userNames(statistics).size());
+        System.out.println("postsQuantity: " + postCount(statistics));
+        System.out.println("commentsQuantity: " + commentsCount(statistics));
     }
 
 
 
 
 }
+*/
